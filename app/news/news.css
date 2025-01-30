@@ -1,0 +1,86 @@
+.container {
+  background-color: #f8f9fa;
+}
+
+.header {
+  max-width: 100%;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0px 3%;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  height:auto;
+}
+
+.title {
+  font-size: 200%;
+  font-weight: bold;
+}
+
+.nav-list-button {
+  list-style: none;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  gap: 24px;
+  padding:3% 3%;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-size: 150%;
+}
+
+.nav-list-link{
+  list-style: none;
+  display: flex;
+  flex-grow: 1;
+}
+
+.nav-item-l img{
+  width:80%;
+  height:auto;
+
+}
+
+.nav-item:hover {
+  color: #000;
+}
+
+.news{
+    background-size: cover; /* 画像をコンテナ全体にカバー */
+    background-position: center; /* 中心位置 */
+    padding: 20px; /* セクション全体に適度な余白を追加 */
+    border-radius: 10px; /* 丸みを持たせたデザイン */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 立体感を与える影 */
+    margin:auto; /* 自動的に中央揃え */
+    width:95%;
+  }
+  
+  .note-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    width: 75%;
+    color: #333;
+  }
+  
+  .note-title {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .note-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  

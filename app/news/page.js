@@ -1,6 +1,6 @@
 import Link from "next/link"; // 追加
 import Image from "next/image";
-import "./globals.css"; 
+import "./news.css"; 
 
 export default function Home() {
   return (
@@ -27,12 +27,27 @@ export default function Home() {
           </ul>
         </nav>
       </div>
-
-      {/* Main Content */}
-      <div className="main-content">
-        <Image src="/yoguze.png" alt="yoguze" width={600} height={600} className="main-image" />
+     <div className="news">
+        <div className="note-container">
+          <p className="note-title">直近2ヶ月の出来事</p>
+          <div className="note-item">
+            <p>9/22：矢上祭でワードディスタンスゲームを展示(自分はほとんど何もしていない模様)</p>
+          </div>
+          <div className="note-item">
+            <p>10/4：東急ストア日吉店でバイトを始める。</p>
+          </div>
+          <div className="note-item">
+            <p>10/6：Pythonデータ分析実践試験に合格</p>
+          </div>
+          <div className="note-item">
+            <p>11/11：ポケモン公式大会「スター団杯」194/14805 位(上位1.5%)</p>
+          </div>
+          <div className="note-item">
+            <p>11/13：慶應AICの講習会「AIビジネス基礎」に参加</p>
+          </div>
+        </div>
       </div>
-    </div>
-  );
-}
 
+    </div>
+    );
+}
