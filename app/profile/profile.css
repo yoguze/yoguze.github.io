@@ -1,9 +1,10 @@
+/* styles/globals.css */
 .container {
   background-color: #f8f9fa;
 }
 
 .header {
-  max-width: 100%;
+  width: 95%;
   background-color: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   padding: 0px 3%;
@@ -11,6 +12,7 @@
   justify-content:space-between;
   align-items: center;
   height:auto;
+  position:fixed;
 }
 
 .title {
@@ -42,85 +44,114 @@
 .nav-item-l img{
   width:80%;
   height:auto;
-
 }
 
 .nav-item:hover {
   color: #000;
 }
-.profile {
-    background-image: url('/profile.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative; /* 相対位置を指定して背景を維持 */
-    margin:auto;
-    width:95%;
+
+.margin{
+  padding-top:8%;
 }
 
-.profile-container {
-    background-color: rgba(255, 255, 255, 0.8); /* 半透明で見やすく */
-    padding: 5%;
-    margin:5%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #333;
-    width:70%;
-    margin: auto;
+.introduction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding:1% 5%;
+  margin-left:5%;
 }
 
-.profile-title{
-  font-size:35px;
+.intro-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-image {
+  width:70%;
+  height:70%;
+}
+
+.intro-right {
+  flex: 2;
+  padding: 20px;
+}
+
+.intro-title {
+  font-size: 28px;
   font-weight: bold;
+  margin-bottom: 10px;
   text-align:center;
 }
 
-.profile-p{
-  font-size:18px;
+.intro-text {
+  font-size: 28px;
+  margin-bottom: 5px;
+  text-align:center;
 }
 
-.hobby{
-    background-image: url('/pokemon.jpg'); /* 画像ファイルを背景として設定 */
-    background-size: cover; /* 画像をコンテナ全体にカバー */
-    background-position: center; /* 中心位置 */
-    padding: 20px; /* セクション全体に適度な余白を追加 */
-    border-radius: 10px; /* 丸みを持たせたデザイン */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 立体感を与える影 */
-    margin: 20px auto; /* 自動的に中央揃え */
-    width:95%;
-  
-}
-
-.hobby-container{
-  background-color: rgba(255, 255, 255, 0.8); /* 半透明で見やすく */
-  padding: 20px; /* セクション全体に適度な余白を追加 */
-  border-radius: 10px; /* 丸みを持たせたデザイン */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 立体感を与える影 */
-  margin: 20px auto; /* 自動的に中央揃え */
-  width:75%;
-  color: #333; /* 読みやすい濃いグレーの文字色 */
+/* Hobby Anime Section */
+.hobby-anime{
+  width: 80%;
+  background-color: white;
+  border-radius: 10px;
+  padding:1% 5%;
+  margin: 5% auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .hobby-title {
-  font-size: 35px; /* タイトルを目立たせる大きさ */
-  font-weight: bold; /* 太字で強調 */
-  text-align: center; /* 中央揃え */
-  margin-bottom: 20px; /* 下部に余白 */
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align:center;
 }
 
-.hobby-p {
-  font-size: 18px; /* 適度な大きさのフォント */
-  line-height: 1.6; /* 読みやすい行間 */
-  margin-bottom: 15px; /* 各段落間に余白 */
+.hobby-text {
+  font-size: 18px;
+  font-weight:bold;
 }
 
-.hobby-container a {
-  color:purple; 
-  text-decoration: underline; /* 常に下線を表示 */
+.anime-rank{
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display:flex;
+  padding:1% 5%;
+  margin:1% 0;
 }
 
-.hobby-container a:hover {
-  color: blue; /* ホバー時に青色に変更 */
+.anime-image{
+  flex:1;
+  width:80%;
+  height:auto;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.anime-detail{
+  flex:2;
+}
+
+.anime-description{
+  font-size:18px;
+}
+
+.hobby-game {
+  width: 80%;
+  background-color: white;
+  border-radius: 10px;
+  padding:1% 5%;
+  margin: 5% auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tellme{
+  font-size:24px;
 }

@@ -45,6 +45,15 @@ export default function Home() {
           <div className="note-item">
             <p>11/13：慶應AICの講習会「AIビジネス基礎」に参加</p>
           </div>
+          <div className="note-item">
+            <p>12/4：統計検定2級合格</p>
+          </div>
+          <div className="note-item">
+            <p>12/17：AICビジネス基礎合格証授与</p>
+          </div>
+          <div className="note-item">
+            <p>12/25：クリスマス</p>
+          </div>
         </div>
       </div>
 

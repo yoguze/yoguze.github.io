@@ -3,7 +3,7 @@
 }
 
 .header {
-  max-width: 100%;
+  width:95%;
   background-color: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   padding: 0px 3%;
@@ -11,6 +11,8 @@
   justify-content:space-between;
   align-items: center;
   height:auto;
+  position:fixed;
+  position:center;
 }
 
 .title {
@@ -48,14 +50,13 @@
 .nav-item:hover {
   color: #000;
 }
-
 .news{
     background-size: cover; /* 画像をコンテナ全体にカバー */
     background-position: center; /* 中心位置 */
     padding: 20px; /* セクション全体に適度な余白を追加 */
     border-radius: 10px; /* 丸みを持たせたデザイン */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 立体感を与える影 */
-    margin:auto; /* 自動的に中央揃え */
+    margin-top:auto; /* 自動的に中央揃え */
     width:95%;
   }
   
