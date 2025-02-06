@@ -158,6 +158,7 @@
   font-size: 12px;
   display: inline-block;
   white-space: nowrap;
+  max-width:50%;
 }
 
 .footer {
