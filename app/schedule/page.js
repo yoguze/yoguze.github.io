@@ -59,11 +59,24 @@ export default function Schedule() {
       <strong>説明 :</strong> ${description}
     `;
 
+    const tooltipWidth = 200;  
+
+// クリックしたイベントの座標を取得
+const eventRect = info.jsEvent.target.getBoundingClientRect(); 
+
+// 予定の右下にツールチップの右上を配置
+let posX = eventRect.right - tooltipWidth;
+let posY = eventRect.bottom + window.scrollY;
+
+// 画面端でツールチップがはみ出さないように補正
+if (posX < 0) posX = 10;  // 左にはみ出したら補正
+if (posY + 80 > window.innerHeight) posY -= 80 + 20;  // 下にはみ出したら補正
+
     // 位置と表示設定
     tooltip.style.display = "block";
     tooltip.style.position = "absolute";
-    tooltip.style.left = `${info.jsEvent.pageX + 10}px`;
-    tooltip.style.top = `${info.jsEvent.pageY + 10}px`;
+    tooltip.style.left = `${posX}px`;
+    tooltip.style.top = `${posY}px`;
     tooltip.style.zIndex = "1000";
     tooltip.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
     tooltip.style.color = "white";
