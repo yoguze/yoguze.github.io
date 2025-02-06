@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid"; 
 import interactionPlugin from "@fullcalendar/interaction";
 import Link from "next/link";
 import Papa from "papaparse";  
@@ -10,6 +11,7 @@ import "./schedule.css";
 
 export default function Schedule() {
   const [events, setEvents] = useState([]);
+  const [calendarView, setCalendarView] = useState("dayGridMonth");
 
   useEffect(() => {
     fetch("/events.csv") 
@@ -19,17 +21,23 @@ export default function Schedule() {
           header: true, 
           skipEmptyLines: true,
           complete: (result) => {
-            const parsedEvents = result.data.map(event => ({
-              title: event.Title,
-              start: event.Date, 
-              color: event.Color || "black",  
-              textColor: "black",
-              extendedProps: { 
-                startTime: event.StartTime,
-                endTime: event.EndTime,
-                description: event.Description
-              }
-            }));
+            const parsedEvents = result.data.map(event => {
+              const hasTime = event.StartTime && event.EndTime; // 時間情報があるか
+
+              return {
+                title: event.Title || "無題",
+                start: hasTime ? `${event.Date}T${event.StartTime}` : event.Date, // 時間付き or 日付のみ
+                end: hasTime ? `${event.Date}T${event.EndTime}` : null,
+                allDay: !hasTime, // 時間があるなら allDay=false
+                color: event.Color || "black",  
+                textColor: "black",
+                extendedProps: { 
+                  startTime: event.StartTime ? event.StartTime.split(":").slice(0, 2).join(":") : "不明",
+                  endTime: event.EndTime ? event.EndTime.split(":").slice(0, 2).join(":") : "不明",
+                  description: event.Description || "説明なし"
+                }
+              };
+            });
 
             setEvents(parsedEvents);
           }
@@ -38,10 +46,14 @@ export default function Schedule() {
       .catch(error => console.error("CSV読み込みエラー:", error));
   }, []);
 
+  
+
   // ✅ ツールチップの表示関数
   const handleMouseEnter = (info) => {
-    const { title, extendedProps } = info.event;
+    const { title,start,extendedProps } = info.event;
     const { startTime, endTime, description } = extendedProps;
+    const eventDate = new Date(start);
+    const formattedDate = `${eventDate.getFullYear()}年${eventDate.getMonth() + 1}月${eventDate.getDate()}日`;
 
     // 既存のツールチップがあれば削除
     let tooltip = document.getElementById("fc-tooltip");
@@ -54,6 +66,7 @@ export default function Schedule() {
 
     // ツールチップの内容を設定
     tooltip.innerHTML = `
+      <strong>日付 :</strong> ${formattedDate}<br>
       <strong>タイトル :</strong> ${title}<br>
       <strong>時間 :</strong> ${startTime} ～ ${endTime}<br>
       <strong>説明 :</strong> ${description}
@@ -129,15 +142,32 @@ if (posY + 80 > window.innerHeight) posY -= 80 + 20;  // 下にはみ出した�
           <li>🔵:その他</li>
         </ul>
       </div>
+      
       <div className="calendar-container">
+        <div className="calendar-view-selector">
+          <label>カレンダー表示: </label>
+          <select value={calendarView} onChange={(e) => setCalendarView(e.target.value)}>
+            <option value="dayGridMonth">月間カレンダー</option>
+            <option value="timeGridWeek">週間カレンダー</option>
+          </select>
+        </div>
+      {/* カレンダー表示モード選択 */}
         <FullCalendar
-          plugins={[dayGridPlugin, interactionPlugin]}
-          initialView="dayGridMonth"
+        key={calendarView}
+          plugins={[dayGridPlugin,timeGridPlugin,interactionPlugin]}
+          initialView={calendarView}
           events={events}  
           editable={true}
           selectable={true}
           eventMouseEnter={handleMouseEnter}  // ✅ ここに関数をセット
           eventMouseLeave={handleMouseLeave}  // ✅ ここに関数をセット
+          eventDisplay="block"
+          displayEventTime={false}  // 🔥 ここを追加（時間を非表示にする）
+          slotLabelFormat={{
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false, 
+          }}
         />
       </div>
       <footer className="footer">

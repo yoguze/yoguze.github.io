@@ -117,7 +117,7 @@
 .calendar-container {
   width: 80%;
   height:auto;
-  margin: 1% auto;
+  margin: 0.5% auto;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -142,13 +142,14 @@
 }
 
 .fc-event {
-  border: none !important;
-  color: white !important;
+  color: black !important; /* ✅ 文字色を白に */
+  border: none !important; /* ✅ 枠線を消してスッキリ */
   font-size: 14px !important;
   padding: 4px 6px !important;
   border-radius: 4px !important;
+  display: block !important; /* ✅ イベント全体を塗りつぶす */
+  width:100%;
 }
-
 
 .fc-event-tooltip {
   padding: 4px 6px;
