@@ -27,6 +27,7 @@
   justify-content: center;
   gap: 24px;
   padding:3% 3%;
+  font-weight:bold;
 }
 
 .nav-item {
@@ -50,13 +51,18 @@
 .nav-item:hover {
   color: #000;
 }
+
+.margin{
+  padding-top:8%;
+}
+
 .news{
     background-size: cover; /* 画像をコンテナ全体にカバー */
     background-position: center; /* 中心位置 */
     padding: 20px; /* セクション全体に適度な余白を追加 */
     border-radius: 10px; /* 丸みを持たせたデザイン */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 立体感を与える影 */
-    margin-top:auto; /* 自動的に中央揃え */
+    margin:auto; /* 自動的に中央揃え */
     width:95%;
   }
   
@@ -83,5 +89,59 @@
     border-radius: 5px;
     margin-bottom: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .footer {
+    width: 95%;
+    background-color:blueviolet;
+    padding: 1% 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+  }
+  
+  .footer-left h2 {
+    font-size: 200%;
+    font-weight: bold;
+  }
+  
+  .footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-nav {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-item {
+    text-decoration: none;
+    color: white;
+    font-size:150%;
+    margin-bottom: 0.5%;
+    font-weight:bold;
+  }
+  
+  .footer-item:hover {
+    color: #000;
+  }
+  
+  .footer-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-icons {
+    display: grid;
+    grid-template-columns: repeat(2, 50px);
+    gap: 10px;
+  }
+  
+  .footer-icons img {
+    width: 80%;
+    height: auto;
   }
   

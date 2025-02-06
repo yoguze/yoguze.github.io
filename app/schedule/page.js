@@ -105,7 +105,7 @@ export default function Schedule() {
         </nav>
       </div>
       {/* Main Content: FullCalendar */}
-      <h1 className="title">Schedule</h1>
+      <div className="margin"></div>
       <div className="calendar-info">
         <h2>色の意味：</h2>
         <ul>
@@ -127,6 +127,34 @@ export default function Schedule() {
           eventMouseLeave={handleMouseLeave}  // ✅ ここに関数をセット
         />
       </div>
+      <footer className="footer">
+        {/* 左サイド */}
+        <div className="footer-left">
+          <h2>よぐぜ</h2>
+        </div>
+
+        {/* 中央サイド */}
+        <div className="footer-center">
+          <ul className="footer-nav">
+            <li><Link href="/" className="footer-item">Home</Link></li>
+            <li><Link href="/video" className="footer-item">Video</Link></li>
+            <li><Link href="/profile" className="footer-item">Profile</Link></li>
+            <li><Link href="/schedule" className="footer-item">Schedule</Link></li>
+            <li><Link href="/news" className="footer-item">News</Link></li>
+          </ul>
+        </div>
+
+        {/* 右サイド */}
+        <div className="footer-right">
+          <div className="footer-icons">
+            <Link href="https://www.youtube.com/@sukima2022"><img src="youtube.png" alt="YouTube" /></Link>
+            <img src="twitch.png" alt="Twitch" />
+            <Link href="https://x.com/Yoguze1210"><img src="x.png" alt="X" /></Link>
+            <Link href="https://www.tiktok.com/@yoguze02"><img src="tiktok.png" alt="TikTok" /></Link>
+            <Link href="https://note.com/yoguze45610"><img src="note.png" alt="Note" /></Link>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
