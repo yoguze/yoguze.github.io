@@ -57,40 +57,10 @@
    margin-right: 2vw;
 }
 
-
 .nav-item-l img {
   width: 2vw;
   margin: 0.5vw;
   height: auto;
-}
-
-/* ----- MAIN ----- */
-.main-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 80px; /* ヘッダー分 */
-  padding-bottom: 24px; /* フッターと重ならないように余白を追加 */
-  padding-left: 3%;
-  padding-right: 3%;
-  flex-direction: column;
-  height: auto; /* ← ここを "auto" に変更！！ */
-}
-
-.margin{
-  margin: top 10vw;
-}
-
-.main-image {
-  border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 767px) {
-  .main-image {
-    width: 90%;
-    height: auto;
-  }
 }
 
 /* ----- FOOTER ----- */

@@ -53,12 +53,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* Main Content */}
-      <div className="main-content">
-      <div className="margin"></div>
-        <Image src="/yoguze.png" alt="yoguze" width={600} height={600} className="main-image" />
-      </div>
-
       {/* Footer */}
       <footer className="footer">
         <div className="footer-left">

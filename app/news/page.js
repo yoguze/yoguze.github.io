@@ -1,6 +1,8 @@
 import Link from "next/link"; // 追加
 import Image from "next/image";
 import "./news.css"; 
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 export default function Home() {
   return (
