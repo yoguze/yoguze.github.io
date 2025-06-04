@@ -21,6 +21,7 @@ export default function Home() {
             <li><Link href="/video" className="nav-item">Video</Link></li>
             <li><Link href="/profile" className="nav-item">Profile</Link></li>
             <li><Link href="/schedule" className="nav-item">Schedule</Link></li>
+            <li><Link href="/music" className="nav-item">Music</Link></li>
             <li><Link href="/news" className="nav-item">News</Link></li>
           </ul>
           <ul className="nav-list-link">
@@ -43,6 +44,7 @@ export default function Home() {
             <li><Link href="/video" className="nav-item">Video</Link></li>
             <li><Link href="/profile" className="nav-item">Profile</Link></li>
             <li><Link href="/schedule" className="nav-item">Schedule</Link></li>
+            <li><Link href="/music" className="nav-item">Music</Link></li>
             <li><Link href="/news" className="nav-item">News</Link></li>
           </ul>
           <ul className="nav-list-link">
@@ -70,6 +72,7 @@ export default function Home() {
             <li><Link href="/video" className="footer-item">Video</Link></li>
             <li><Link href="/profile" className="footer-item">Profile</Link></li>
             <li><Link href="/schedule" className="footer-item">Schedule</Link></li>
+            <li><Link href="/music" className="footer-item">Music</Link></li>
             <li><Link href="/news" className="footer-item">News</Link></li>
           </ul>
         </div>

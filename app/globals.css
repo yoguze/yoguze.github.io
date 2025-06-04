@@ -59,7 +59,7 @@
 
 
 .nav-item-l img {
-  width: 2vw;
+  width: 3vw;
   margin: 0.5vw;
   height: auto;
 }
@@ -69,17 +69,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 80px; /* ヘッダー分 */
-  padding-bottom: 24px; /* フッターと重ならないように余白を追加 */
+  padding-top: 4vh; /* ヘッダー分 */
+  padding-bottom: 1vh; /* フッターと重ならないように余白を追加 */
   padding-left: 3%;
   padding-right: 3%;
   flex-direction: column;
   height: auto; /* ← ここを "auto" に変更！！ */
 }
 
-.margin{
-  margin: top 10vw;
-}
 
 .main-image {
   border-radius: 8px;

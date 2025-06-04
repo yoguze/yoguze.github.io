@@ -1,22 +1,32 @@
+/* styles/globals.css */
 .container {
   background-color: #f8f9fa;
 }
 
+/* ----- HEADER ----- */
 .header {
-  width: 95%;
+  width: 94%;
   background-color: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 0px 3%;
+  padding: 0 3%;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
-  height:auto;
-  position:fixed;
+  height: auto;
+  position: fixed;
 }
 
 .title {
   font-size: 200%;
   font-weight: bold;
+}
+
+/* ----- NAVIGATION (PC) ----- */
+.pc-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center; /* これで中央寄せに近づく */
 }
 
 .nav-list-button {
@@ -25,7 +35,8 @@
   flex-grow: 1;
   justify-content: center;
   gap: 24px;
-  padding:3% 3%;
+  padding: 3% 3%;
+  font-weight: bold;
 }
 
 .nav-item {
@@ -34,35 +45,26 @@
   font-size: 150%;
 }
 
-.nav-list-link{
-  list-style: none;
-  display: flex;
-  flex-grow: 1;
-}
-
-.nav-item-l img{
-  width:80%;
-  height:auto;
-
-}
-
 .nav-item:hover {
   color: #000;
 }
 
-.margin{
-  padding-top:3%;
-}
-@media(max-width:1200px) {
-  .margin{
-    padding-top:8%;
-  }
+.nav-list-link {
+  list-style: none;
+  display: flex;
+  gap: 12px; /* 任意で調整 */
+  align-items: center;
+   margin-right: 2vw;
 }
 
-@media(max-width:899px){
-  .margin{
-    padding-top:3%;
-  }
+.nav-item-l img {
+  width: 3vw;
+  margin: 0.5vw;
+  height: auto;
+}
+
+.margin{
+  padding-top:12.5vh;
 }
 
 /* カレンダーの見方（説明エリア） */
@@ -71,9 +73,9 @@
   padding: 1%;
   border-radius: 12px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 5% auto;
+  margin:5vw 8vh;
   width:50%;
-  transition: all 0.3s ease-in-out;
+  align-items: center;
 }
 
 .calendar-info h2 {
@@ -117,7 +119,6 @@
 .calendar-container {
   width: 80%;
   height:auto;
-  margin: 0.5% auto;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -162,14 +163,15 @@
   max-width:50%;
 }
 
+/* ----- FOOTER ----- */
 .footer {
   width: 95%;
-  background-color:blueviolet;
+  background-color: blueviolet;
   padding: 1% 3%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color:white;
+  color: white;
 }
 
 .footer-left h2 {
@@ -191,9 +193,9 @@
 .footer-item {
   text-decoration: none;
   color: white;
-  font-size:150%;
+  font-size: 150%;
   margin-bottom: 0.5%;
-  font-weight:bold;
+  font-weight: bold;
 }
 
 .footer-item:hover {
@@ -214,4 +216,91 @@
 .footer-icons img {
   width: 80%;
   height: auto;
+}
+
+/* ----- HAMBURGER BUTTON ----- */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* ----- OVERLAY MENU ----- */
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.close-button {
+  position: absolute;
+  top: 16px;
+  right: 5vw;
+  font-size: 6vw;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ----- RESPONSIVE DESIGN ----- */
+@media (max-width: 800px) {
+  .pc-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(6px, 2vw, 24px) clamp(4px, 1vw, 32px);
+  }
+
+  .nav-list-button,
+  .nav-list-link {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 0;
+  }
+
+  .nav-list-link {
+    margin-top: 24px;
+  }
+
+  .nav-item {
+    font-size:5vw;
+    width: 40px;
+  } 
+
+  .nav-item-l img {
+    width: 40px;
+    height: auto;
+  }
+
+  .overlay-menu {
+    justify-content: center;
+    padding: 2vw 2vw;
+  }
+}
+
+
+@media (min-width: 801px) {
+  .overlay-menu {
+    display: none !important;
+  }
 }

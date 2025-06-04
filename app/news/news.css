@@ -1,23 +1,32 @@
+/* styles/globals.css */
 .container {
   background-color: #f8f9fa;
 }
 
+/* ----- HEADER ----- */
 .header {
-  width:95%;
+  width: 94%;
   background-color: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 0px 3%;
+  padding: 0 3%;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
-  height:auto;
-  position:fixed;
-  position:center;
+  height: auto;
+  position: fixed;
 }
 
 .title {
   font-size: 200%;
   font-weight: bold;
+}
+
+/* ----- NAVIGATION (PC) ----- */
+.pc-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center; /* これで中央寄せに近づく */
 }
 
 .nav-list-button {
@@ -26,8 +35,8 @@
   flex-grow: 1;
   justify-content: center;
   gap: 24px;
-  padding:3% 3%;
-  font-weight:bold;
+  padding: 3% 3%;
+  font-weight: bold;
 }
 
 .nav-item {
@@ -36,24 +45,23 @@
   font-size: 150%;
 }
 
-.nav-list-link{
-  list-style: none;
-  display: flex;
-  flex-grow: 1;
-}
-
-.nav-item-l img{
-  width:80%;
-  height:auto;
-
-}
-
 .nav-item:hover {
   color: #000;
 }
 
-.margin{
-  padding-top:8%;
+.nav-list-link {
+  list-style: none;
+  display: flex;
+  gap: 12px; /* 任意で調整 */
+  align-items: center;
+   margin-right: 2vw;
+}
+
+
+.nav-item-l img {
+  width: 3vw;
+  margin: 0.5vw;
+  height: auto;
 }
 
 .news{
@@ -91,56 +99,144 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .footer {
-    width: 95%;
-    background-color:blueviolet;
-    padding: 1% 3%;
-    display: flex;
+  /* ----- FOOTER ----- */
+.footer {
+  width: 95%;
+  background-color: blueviolet;
+  padding: 1% 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.footer-left h2 {
+  font-size: 200%;
+  font-weight: bold;
+}
+
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-item {
+  text-decoration: none;
+  color: white;
+  font-size: 150%;
+  margin-bottom: 0.5%;
+  font-weight: bold;
+}
+
+.footer-item:hover {
+  color: #000;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-icons {
+  display: grid;
+  grid-template-columns: repeat(2, 50px);
+  gap: 10px;
+}
+
+.footer-icons img {
+  width: 80%;
+  height: auto;
+}
+
+/* ----- HAMBURGER BUTTON ----- */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* ----- OVERLAY MENU ----- */
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.close-button {
+  position: absolute;
+  top: 16px;
+  right: 5vw;
+  font-size: 6vw;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ----- RESPONSIVE DESIGN ----- */
+@media (max-width: 800px) {
+  .pc-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .header {
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    color:white;
+    padding: clamp(6px, 2vw, 24px) clamp(4px, 1vw, 32px);
   }
-  
-  .footer-left h2 {
-    font-size: 200%;
-    font-weight: bold;
-  }
-  
-  .footer-center {
-    display: flex;
+
+  .nav-list-button,
+  .nav-list-link {
     flex-direction: column;
     align-items: center;
-  }
-  
-  .footer-nav {
-    list-style: none;
+    gap: 16px;
     padding: 0;
   }
-  
-  .footer-item {
-    text-decoration: none;
-    color: white;
-    font-size:150%;
-    margin-bottom: 0.5%;
-    font-weight:bold;
+
+  .nav-list-link {
+    margin-top: 24px;
   }
-  
-  .footer-item:hover {
-    color: #000;
-  }
-  
-  .footer-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  .footer-icons {
-    display: grid;
-    grid-template-columns: repeat(2, 50px);
-    gap: 10px;
-  }
-  
-  .footer-icons img {
-    width: 80%;
+
+  .nav-item {
+    font-size:5vw;
+    width: 40px;
+  } 
+
+  .nav-item-l img {
+    width: 40px;
     height: auto;
   }
+
+  .overlay-menu {
+    justify-content: center;
+    padding: 2vw 2vw;
+  }
+}
+
+
+@media (min-width: 801px) {
+  .overlay-menu {
+    display: none !important;
+  }
+}

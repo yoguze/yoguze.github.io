@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
@@ -10,6 +9,8 @@ import Papa from "papaparse";
 import "./schedule.css";
 
 export default function Schedule() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
   const [events, setEvents] = useState([]);
   const [calendarView, setCalendarView] = useState("dayGridMonth");
 
@@ -107,29 +108,52 @@ if (posY + 80 > window.innerHeight) posY -= 80 + 20;  // 下にはみ出した�
   };
 
   return (
-  <div className="container">
+    <div className="container">
       {/* Header */}
       <div className="header">
         <h1 className="title">公式サイト</h1>
-        <nav>
+
+        {/* PCナビ */}
+        <nav className="pc-nav">
           <ul className="nav-list-button">
             <li><Link href="/" className="nav-item">Home</Link></li>
             <li><Link href="/video" className="nav-item">Video</Link></li>
             <li><Link href="/profile" className="nav-item">Profile</Link></li>
             <li><Link href="/schedule" className="nav-item">Schedule</Link></li>
+            <li><Link href="/music" className="nav-item">Music</Link></li>
             <li><Link href="/news" className="nav-item">News</Link></li>
           </ul>
-        </nav>
-        <nav>
           <ul className="nav-list-link">
-            <li><Link href="https://www.youtube.com/@sukima2022" className="nav-item-l"><img src="youtube.png"></img></Link></li>
-            <li className="nav-item-1"></li>
-            <li><Link href="https://www.tiktok.com/@yoguze02" className="nav-item-l"><img src="tiktok.png"></img></Link></li>
-            <li className="nav-item-1"></li>
-            <li><Link href="https://x.com/Yoguze1210" className="nav-item-l"><img src="x.png"></img></Link></li>
+            <li><Link href="https://www.youtube.com/@sukima2022" className="nav-item-l"><img src="youtube.png" /></Link></li>
+            <li><Link href="https://www.tiktok.com/@yoguze02" className="nav-item-l"><img src="tiktok.png" /></Link></li>
+            <li><Link href="https://x.com/Yoguze1210" className="nav-item-l"><img src="x.png" /></Link></li>
           </ul>
         </nav>
+
+        {/* ハンバーガー（モバイル用） */}
+        <button className="hamburger" onClick={toggleMenu}>☰</button>
       </div>
+
+      {/* モバイルメニュー（オーバーレイ） */}
+      {menuOpen && (
+        <div className="overlay-menu">
+          <button className="close-button" onClick={toggleMenu}>✕</button>
+          <ul className="nav-list-button">
+            <li><Link href="/" className="nav-item">Home</Link></li>
+            <li><Link href="/video" className="nav-item">Video</Link></li>
+            <li><Link href="/profile" className="nav-item">Profile</Link></li>
+            <li><Link href="/schedule" className="nav-item">Schedule</Link></li>
+            <li><Link href="/music" className="nav-item">Music</Link></li>
+            <li><Link href="/news" className="nav-item">News</Link></li>
+          </ul>
+          <ul className="nav-list-link">
+            <li><Link href="https://www.youtube.com/@sukima2022" className="nav-item-l"><img src="youtube.png" /></Link></li>
+            <li><Link href="https://www.tiktok.com/@yoguze02" className="nav-item-l"><img src="tiktok.png" /></Link></li>
+            <li><Link href="https://x.com/Yoguze1210" className="nav-item-l"><img src="x.png" /></Link></li>
+          </ul>
+        </div>
+      )
+    }
       {/* Main Content: FullCalendar */}
       <div className="margin"></div>
       <div className="calendar-info">

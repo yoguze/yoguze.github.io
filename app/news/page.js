@@ -1,34 +1,60 @@
-import Link from "next/link"; // 追加
+"use client";
+import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import "./news.css"; 
-import '@fortawesome/fontawesome-free/css/all.min.css';
-
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (
     <div className="container">
       {/* Header */}
       <div className="header">
         <h1 className="title">公式サイト</h1>
-        <nav>
+
+        {/* PCナビ */}
+        <nav className="pc-nav">
           <ul className="nav-list-button">
             <li><Link href="/" className="nav-item">Home</Link></li>
             <li><Link href="/video" className="nav-item">Video</Link></li>
             <li><Link href="/profile" className="nav-item">Profile</Link></li>
             <li><Link href="/schedule" className="nav-item">Schedule</Link></li>
+            <li><Link href="/music" className="nav-item">Music</Link></li>
             <li><Link href="/news" className="nav-item">News</Link></li>
           </ul>
-        </nav>
-        <nav>
           <ul className="nav-list-link">
-            <li><Link href="https://www.youtube.com/@sukima2022" className="nav-item-l"><img src="youtube.png"></img></Link></li>
-            <li className="nav-item-1"></li>
-            <li><Link href="https://www.tiktok.com/@yoguze02" className="nav-item-l"><img src="tiktok.png"></img></Link></li>
-            <li className="nav-item-1"></li>
-            <li><Link href="https://x.com/Yoguze1210" className="nav-item-l"><img src="x.png"></img></Link></li>
+            <li><Link href="https://www.youtube.com/@sukima2022" className="nav-item-l"><img src="youtube.png" /></Link></li>
+            <li><Link href="https://www.tiktok.com/@yoguze02" className="nav-item-l"><img src="tiktok.png" /></Link></li>
+            <li><Link href="https://x.com/Yoguze1210" className="nav-item-l"><img src="x.png" /></Link></li>
           </ul>
         </nav>
+
+        {/* ハンバーガー（モバイル用） */}
+        <button className="hamburger" onClick={toggleMenu}>☰</button>
       </div>
+
+      {/* モバイルメニュー（オーバーレイ） */}
+      {menuOpen && (
+        <div className="overlay-menu">
+          <button className="close-button" onClick={toggleMenu}>✕</button>
+          <ul className="nav-list-button">
+            <li><Link href="/" className="nav-item">Home</Link></li>
+            <li><Link href="/video" className="nav-item">Video</Link></li>
+            <li><Link href="/profile" className="nav-item">Profile</Link></li>
+            <li><Link href="/schedule" className="nav-item">Schedule</Link></li>
+            <li><Link href="/music" className="nav-item">Music</Link></li>
+            <li><Link href="/news" className="nav-item">News</Link></li>
+          </ul>
+          <ul className="nav-list-link">
+            <li><Link href="https://www.youtube.com/@sukima2022" className="nav-item-l"><img src="youtube.png" /></Link></li>
+            <li><Link href="https://www.tiktok.com/@yoguze02" className="nav-item-l"><img src="tiktok.png" /></Link></li>
+            <li><Link href="https://x.com/Yoguze1210" className="nav-item-l"><img src="x.png" /></Link></li>
+          </ul>
+        </div>
+      )
+    }
       <div className="margin"></div>
      <div className="news">
         <div className="note-container">
