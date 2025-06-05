@@ -194,24 +194,21 @@ if (posY + 80 > window.innerHeight) posY -= 80 + 20;  // 下にはみ出した�
           }}
         />
       </div>
+     {/* Footer */}
       <footer className="footer">
-        {/* 左サイド */}
         <div className="footer-left">
           <h2>よぐぜ</h2>
         </div>
-
-        {/* 中央サイド */}
         <div className="footer-center">
           <ul className="footer-nav">
             <li><Link href="/" className="footer-item">Home</Link></li>
             <li><Link href="/video" className="footer-item">Video</Link></li>
             <li><Link href="/profile" className="footer-item">Profile</Link></li>
             <li><Link href="/schedule" className="footer-item">Schedule</Link></li>
+            <li><Link href="/music" className="footer-item">Music</Link></li>
             <li><Link href="/news" className="footer-item">News</Link></li>
           </ul>
         </div>
-
-        {/* 右サイド */}
         <div className="footer-right">
           <div className="footer-icons">
             <Link href="https://www.youtube.com/@sukima2022"><img src="youtube.png" alt="YouTube" /></Link>
