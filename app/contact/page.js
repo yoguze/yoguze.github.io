@@ -21,7 +21,7 @@ const handleSubmit = async (e) => {
   formData.append("message", form.message.value);
 
   try {
-    const res = await fetch("https://yoguze-github-io.onrender.com", {
+  const res = await fetch("https://yoguze-github-io.onrender.com/", {
   method: "POST",
   body: formData,
 });
