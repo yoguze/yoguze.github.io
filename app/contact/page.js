@@ -86,7 +86,7 @@ const handleSubmit = async (e) => {
         </div>
       )
     }
-    <div class="margin"></div>
+    <div className="margin"></div>
     <div className="contact-form">
         <h2>お問い合わせ</h2>
         <form onSubmit={handleSubmit}>
