@@ -2,11 +2,42 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import "./globals.css";
+import "./contact.css";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  const [status, setStatus] = useState("");
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus("送信中...");
+
+  const form = e.target;
+  const formData = new FormData();
+  formData.append("name", form.name.value);
+  formData.append("email", form.email.value);
+  formData.append("message", form.message.value);
+
+  try {
+    const res = await fetch("http://localhost:5000/", {
+      method: "POST",
+      body: formData,
+    });
+
+    const json = await res.json();
+
+    if (json.status === "success") {
+      setStatus("送信完了しました！");
+      form.reset();
+    } else {
+      setStatus("送信に失敗しました");
+    }
+  } catch (err) {
+    setStatus("サーバーに接続できませんでした");
+  }
+};
 
   return (
     <div className="container">
@@ -21,8 +52,8 @@ export default function Home() {
             <li><Link href="/video" className="nav-item">Video</Link></li>
             <li><Link href="/profile" className="nav-item">Profile</Link></li>
             <li><Link href="/schedule" className="nav-item">Schedule</Link></li>
+            <li><Link href="/music" className="nav-item">Music</Link></li>
             <li><Link href="/news" className="nav-item">News</Link></li>
-            <li><Link href="/contact" className="nav-item">Contact</Link></li>           
           </ul>
           <ul className="nav-list-link">
             <li><Link href="https://www.youtube.com/@sukima2022" className="nav-item-l"><img src="youtube.png" /></Link></li>
@@ -44,8 +75,8 @@ export default function Home() {
             <li><Link href="/video" className="nav-item">Video</Link></li>
             <li><Link href="/profile" className="nav-item">Profile</Link></li>
             <li><Link href="/schedule" className="nav-item">Schedule</Link></li>
+            <li><Link href="/music" className="nav-item">Music</Link></li>
             <li><Link href="/news" className="nav-item">News</Link></li>
-            <li><Link href="/contact" className="nav-item">Contact</Link></li>
           </ul>
           <ul className="nav-list-link">
             <li><Link href="https://www.youtube.com/@sukima2022" className="nav-item-l"><img src="youtube.png" /></Link></li>
@@ -53,13 +84,20 @@ export default function Home() {
             <li><Link href="https://x.com/Yoguze1210" className="nav-item-l"><img src="x.png" /></Link></li>
           </ul>
         </div>
-      )}
+      )
+    }
+    <div class="margin"></div>
+    <div className="contact-form">
+        <h2>お問い合わせ</h2>
+        <form onSubmit={handleSubmit}>
+            <input type="text" name="name" placeholder="お名前" required />
+            <input type="email" name="email" placeholder="メールアドレス" required />
+            <textarea name="message" placeholder="メッセージ" required />
+            <button type="submit">送信</button>
+            <p>{status}</p>
+        </form>
+    </div>
 
-      {/* Main Content */}
-      <div className="main-content">
-      <div className="margin"></div>
-        <Image src="/yoguze.png" alt="yoguze" width={600} height={600} className="main-image" />
-      </div>
 
       {/* Footer */}
       <footer className="footer">
@@ -72,8 +110,8 @@ export default function Home() {
             <li><Link href="/video" className="footer-item">Video</Link></li>
             <li><Link href="/profile" className="footer-item">Profile</Link></li>
             <li><Link href="/schedule" className="footer-item">Schedule</Link></li>
+            <li><Link href="/music" className="footer-item">Music</Link></li>
             <li><Link href="/news" className="footer-item">News</Link></li>
-            <li><Link href="/contact" className="footer-item">Contact</Link></li>
           </ul>
         </div>
         <div className="footer-right">

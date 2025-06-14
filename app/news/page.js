@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import "./news.css"; 
+import "./news.css";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,8 +21,8 @@ export default function Home() {
             <li><Link href="/video" className="nav-item">Video</Link></li>
             <li><Link href="/profile" className="nav-item">Profile</Link></li>
             <li><Link href="/schedule" className="nav-item">Schedule</Link></li>
-            <li><Link href="/music" className="nav-item">Music</Link></li>
             <li><Link href="/news" className="nav-item">News</Link></li>
+            <li><Link href="/contact" className="nav-item">Contact</Link></li>
           </ul>
           <ul className="nav-list-link">
             <li><Link href="https://www.youtube.com/@sukima2022" className="nav-item-l"><img src="youtube.png" /></Link></li>
@@ -44,8 +44,8 @@ export default function Home() {
             <li><Link href="/video" className="nav-item">Video</Link></li>
             <li><Link href="/profile" className="nav-item">Profile</Link></li>
             <li><Link href="/schedule" className="nav-item">Schedule</Link></li>
-            <li><Link href="/music" className="nav-item">Music</Link></li>
             <li><Link href="/news" className="nav-item">News</Link></li>
+            <li><Link href="/contact" className="nav-item">Contact</Link></li>
           </ul>
           <ul className="nav-list-link">
             <li><Link href="https://www.youtube.com/@sukima2022" className="nav-item-l"><img src="youtube.png" /></Link></li>
@@ -96,8 +96,8 @@ export default function Home() {
             <li><Link href="/video" className="footer-item">Video</Link></li>
             <li><Link href="/profile" className="footer-item">Profile</Link></li>
             <li><Link href="/schedule" className="footer-item">Schedule</Link></li>
-            <li><Link href="/music" className="footer-item">Music</Link></li>
             <li><Link href="/news" className="footer-item">News</Link></li>
+            <li><Link href="/contact" className="footer-item">Contact</Link></li>
           </ul>
         </div>
         <div className="footer-right">

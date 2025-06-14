@@ -120,8 +120,8 @@ if (posY + 80 > window.innerHeight) posY -= 80 + 20;  // 下にはみ出した�
             <li><Link href="/video" className="nav-item">Video</Link></li>
             <li><Link href="/profile" className="nav-item">Profile</Link></li>
             <li><Link href="/schedule" className="nav-item">Schedule</Link></li>
-            <li><Link href="/music" className="nav-item">Music</Link></li>
             <li><Link href="/news" className="nav-item">News</Link></li>
+            <li><Link href="/contact" className="nav-item">Contact</Link></li>
           </ul>
           <ul className="nav-list-link">
             <li><Link href="https://www.youtube.com/@sukima2022" className="nav-item-l"><img src="youtube.png" /></Link></li>
@@ -143,8 +143,8 @@ if (posY + 80 > window.innerHeight) posY -= 80 + 20;  // 下にはみ出した�
             <li><Link href="/video" className="nav-item">Video</Link></li>
             <li><Link href="/profile" className="nav-item">Profile</Link></li>
             <li><Link href="/schedule" className="nav-item">Schedule</Link></li>
-            <li><Link href="/music" className="nav-item">Music</Link></li>
             <li><Link href="/news" className="nav-item">News</Link></li>
+            <li><Link href="/contact" className="nav-item">Contact</Link></li>
           </ul>
           <ul className="nav-list-link">
             <li><Link href="https://www.youtube.com/@sukima2022" className="nav-item-l"><img src="youtube.png" /></Link></li>
@@ -205,8 +205,8 @@ if (posY + 80 > window.innerHeight) posY -= 80 + 20;  // 下にはみ出した�
             <li><Link href="/video" className="footer-item">Video</Link></li>
             <li><Link href="/profile" className="footer-item">Profile</Link></li>
             <li><Link href="/schedule" className="footer-item">Schedule</Link></li>
-            <li><Link href="/music" className="footer-item">Music</Link></li>
             <li><Link href="/news" className="footer-item">News</Link></li>
+            <li><Link href="/contact" className="footer-item">Contact</Link></li>
           </ul>
         </div>
         <div className="footer-right">
