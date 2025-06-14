@@ -21,10 +21,10 @@ const handleSubmit = async (e) => {
   formData.append("message", form.message.value);
 
   try {
-    const res = await fetch("http://localhost:5000/", {
-      method: "POST",
-      body: formData,
-    });
+    const res = await fetch("https://your-flask-app.onrender.com/", {
+  method: "POST",
+  body: formData,
+});
 
     const json = await res.json();
 
