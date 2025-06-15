@@ -1,5 +1,6 @@
+/* styles/globals.css */
 .container {
-  background-color: #f8f9fa;
+  background: linear-gradient(to bottom, #dceeff, #ffffff);
 }
 
 /* ----- HEADER ----- */
