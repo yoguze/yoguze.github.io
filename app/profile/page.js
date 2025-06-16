@@ -56,20 +56,45 @@ export default function Home() {
       )
     }
       <div className="margin"></div>
-    <div className="profile1">
-      {/* Introduction Section */}
-      <div className="introduction">
-        <p className="intro-title">自己紹介:よぐぜ</p>
-        <img src="yoguze.png" alt="Profile" className="intro-image" />
-        <p className="intro-text">誕生日: 12月10日</p>
-        <p className="intro-text">好きなもの: ヨーグルト</p>
-        <p className="intro-text">苦手なもの: 酒</p>
-        <p className="intro-text">コメント:動画は面白いから見てください！</p>
+      {/* C: キャラコンセプト */}
+<div className="profile-container">
+      {/* 左カラム：キャライラスト */}
+      <div className="profile-image-section">
+        <Image src="/yoguze.png" alt="よぐぜ" width={400} height={600} className="profile-image" />
       </div>
-      <div className="video">
-        <video></video>
+
+      {/* 右カラム：テキスト情報 */}
+      <div className="profile-text-section">
+        <h1 className="profile-name">よぐぜ - Yoguze</h1>
+
+        <section className="profile-section">
+          <h2>基本プロフィール</h2>
+          <ul>
+            <li>誕生日：12月10日</li>
+            <li>好きなもの：ヨーグルト、アニメ、ゲーム</li>
+            <li>苦手なもの：酒、電話、人付き合い</li>
+          </ul>
+        </section>
+
+        <section className="profile-section">
+          <h2>キャラコンセプト</h2>
+          <p>
+            「社会不適合の進化記録」──
+            ゲームとアニメに依存するビビり陰キャが、
+            発信を通して少しずつ“変化”していく物語。
+          </p>
+        </section>
+        <section className="profile-section">
+          <h2>Q&A</h2>
+          <ul>
+            <li><strong>Q.</strong> 好きなアニメは？ 　　⇒  <strong>A.</strong> CLANNAD、シュタゲ</li>
+            <li><strong>Q.</strong> 苦手なことは？ 　　　⇒  <strong>A.</strong> 電話、人と目を合わせること</li>
+            <li><strong>Q.</strong> 最近始めたことは？ 　⇒  <strong>A.</strong> 発信を続けること</li>
+          </ul>
+        </section>
       </div>
     </div>
+
       
      {/* Footer */}
       <footer className="footer">

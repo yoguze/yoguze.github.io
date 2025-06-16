@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: 'よぐぜ公式Webサイト',
+  title: 'よぐぜ Official website',
   description: 'よぐぜの公式サイトです'
 }
 
